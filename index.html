@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header">
+    <header>
+            <img class="logp" src="asset/Logo.png" alt="">
+    </header>
+    <div>
+    <H1>Bienvenidos al encriptador de texto</H1>
+    </div>
+    </div>
+
+    <main>
+        <!-- Primera Sección -->
+        <section class="PresentacionEncriptar">
+            <div>
+                <textarea class="PresentacionEncriptarTexto" placeholder="Escribe tu texto aquí..."></textarea>
+            </div>
+            <div class="PresentacionEncriptarAviso">
+                <img src="asset/bi_exclamation-circle-fill.png" alt="Imagen descriptiva">
+                <p class="PresentacionEncriptarAvisoTextoParrafo" >Solo letras minúsculas y sin acentos.</p>
+            </div>
+            <div class="PresentacionEncriptarBoton">
+                <button class="PresentacionEncriptarBotonA" onclick="btnEncriptar()" >Encriptar</button>
+                <button class="PresentacionEncriptarBotonG" onclick="btnDesencriptar()">Desencriptar</button>
+            </div>
+        </section>
+
+        <!-- Segunda Sección -->
+        <section class="PresentacionMuneco">
+                <textarea class="MensajeDesencriptado" placeholder=""></textarea>
+                <img class="PresentacionMunecoLogo" src="asset/Muneco.png" alt="">
+            <div class="PresentacionMunecoMensaje">
+                <p class="MensajeParrafo">Ningún mensaje fue encontrado</p>
+                <p class="MensajeParrafo2">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            <div>
+                <button class="BtnCopiar" onclick="copiarTexto()">Copiar</button>
+            </div>
+        </section>
+    </main>
+
+    <footer >
+        <p>José Alonso Figueroa Martínez</p>
+    </footer>
+    <script src="app.js" defer></script>
+</body>
+</html>

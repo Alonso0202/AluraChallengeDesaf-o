@@ -20,7 +20,6 @@ function btnEncriptar(){
     const textoEncriptado = encriptar(PrecentacionInput.value)
     MensajeEncriptado.value = textoEncriptado
     PrecentacionInput.value ="";
-    ImagenMuneco.style.display = "none"; // Oculta la imagen
     parrafos.style.display = "none";
 }
 

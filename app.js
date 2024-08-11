@@ -3,10 +3,20 @@ const MensajeEncriptado=document.querySelector(".MensajeDesencriptado");
 const ImagenMuneco = document.querySelector(".PresentacionMunecoLogo"); 
 const parrafos = document.querySelector(".PresentacionMunecoMensaje")
 const btnCopiar = document.querySelector(".BtnCopiar");
+const mensaje = document.getElementById("mensaje");
+const mensaje2 = document.getElementById("mensaje2");
+
+
 
 btnCopiar.addEventListener('click', function() {
     MensajeEncriptado.select();
     document.execCommand('copy');
+    mensaje.style.display = "none";
+    mensaje2.style.display = "none";
+    if (parrafos) {
+        parrafos.style.display = "block"; // O el valor original del display (block, inline, etc.)
+    }
+
 });
 
 
@@ -21,12 +31,24 @@ function btnEncriptar(){
     MensajeEncriptado.value = textoEncriptado
     PrecentacionInput.value ="";
     parrafos.style.display = "none";
+    mensaje2.style.display = "none"
+
+    const mensaje = document.getElementById("mensaje");
+    if (mensaje) {
+        mensaje.style.display = "block"; // Muestra el mensaje
+    }
 }
 
 function btnDesencriptar(){
     const textoEncriptado = desencriptar(PrecentacionInput.value)
     MensajeEncriptado.value = textoEncriptado
     PrecentacionInput.value ="";
+    parrafos.style.display = "none";
+    mensaje.style.display = "none"
+    const mensaje2 = document.getElementById("mensaje2");
+    if (mensaje2) {
+        mensaje2.style.display = "block"; // Muestra el mensaje
+    }
 
 }
 

@@ -74,6 +74,7 @@ main {
     background-color: transparent;
     outline: none;
     border: none;
+    resize: none; /* Desactiva el redimensionamiento */
 }
 .PresentacionEncriptarTexto::placeholder{
     color: var(--color-secundario);
@@ -155,6 +156,7 @@ main {
     color: var(--color-secundario);
     outline: none;
     border: none;
+    resize: none; /* Desactiva el redimensionamiento */
 }
 
 .MensajeDesencriptado::placeholder {
@@ -175,16 +177,34 @@ main {
 }
 
 .MensajeParrafo {
+    color: var(--color-texto-negro);
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
 }
 
 .MensajeParrafo2 {
+    color: var(--color-texto-negro);
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
     margin-top: 10px;
+}
+#mensaje{
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-texto-negro);
+
+}
+
+#mensaje2{
+    padding: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-texto-negro);
 }
 
 .BtnCopiar{
@@ -207,7 +227,7 @@ footer{
 
 }
 
-@media (max-width: 1250px) {
+@media (max-width: 700px) {
     .BtnCopiar{
         width: 200px;
     }
@@ -227,9 +247,8 @@ footer{
     }
 
     .header {
-        flex-direction: column; /* Cambia a disposición vertical */
-        align-items: center; /* Centra los elementos horizontalmente */
-        margin: 40px 0px 0px 40px;
+        flex-direction: column; 
+        align-items: center; 
 
     }
 
@@ -242,4 +261,33 @@ footer{
         flex-direction: column;
         padding: 5%;
     }
+        
 }
+@media screen and (min-width: 700px) and (max-width: 1024px) {
+    .BtnCopiar {
+        width: 200px;
+    }
+
+    .PresentacionMuneco,
+    .PresentacionEncriptarTexto {
+        width: 80%;
+        margin: 20px 10%;
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 30px 40px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+
+    main {
+        padding: 5%;
+        flex-direction: column;
+    }
+}
+    

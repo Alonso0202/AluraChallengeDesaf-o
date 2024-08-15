@@ -227,23 +227,40 @@ footer{
 
 }
 
+/*----------MEDIA----------*/
+
 @media (max-width: 700px) {
+    h1{
+        margin: 10px 0px 10px 0px;
+        
+        font-size: 1.5rem;
+    
+    }
+
+    .PresentacionEncriptar{
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+
+    }
+
+    .PresentacionEncriptarAvisoTextoParrafo{
+        font-size: 1rem;
+    }
+
     .BtnCopiar{
         width: 200px;
     }
 
-    .PresentacionMuneco{
-        width: 70%;
-        margin: 20px 0px 0px 50px
-    }
-
     .PresentacionEncriptar{
-        margin: 168px 0px 0px 45px;
+        margin: 168px 0px 0px 0px;
+        align-items: center;
 
     }
 
     .PresentacionEncriptarTexto{
-        width: 70%; 
+        width: 100%; 
     }
 
     .header {
@@ -252,19 +269,18 @@ footer{
 
     }
 
-    h1{
-    margin-left: 10px;
-    font-size: 1.5rem;
-}
 
     main{
+        display: flex;
         flex-direction: column;
         padding: 5%;
+        align-items: center;
     }
      
     .PresentacionMuneco {
         width: 80%;
         height: 300px;
+        margin: 20px 0px 0px 0px
      
     }
 
@@ -277,7 +293,7 @@ footer{
         align-items: center; 
         gap: 16px; 
         margin-top: 50px; 
-        margin-left: 30px;
+        margin-left: px;
     }
 
     .PresentacionEncriptarBotonA,
@@ -288,16 +304,13 @@ footer{
     }
 
     .PresentacionEncriptarAviso{
-        
-        
-      
-        padding: 0px 0px 0px 20px;
         gap: 8px;
         position: absolute;
         top: 500px;
     }
-    
+
 }
+    
 
 @media screen and (min-width: 700px) and (max-width: 1024px) {
 

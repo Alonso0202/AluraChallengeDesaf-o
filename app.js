@@ -5,7 +5,8 @@ const parrafos = document.querySelector(".PresentacionMunecoMensaje")
 const btnCopiar = document.querySelector(".BtnCopiar");
 const mensaje = document.getElementById("mensaje");
 const mensaje2 = document.getElementById("mensaje2");
-
+const textarea = document.querySelector(".PresentacionEncriptarTexto");
+const textoEncriptado = desencriptar(PrecentacionInput.value);
 
 
 btnCopiar.addEventListener('click', function() {
@@ -14,7 +15,7 @@ btnCopiar.addEventListener('click', function() {
     mensaje.style.display = "none";
     mensaje2.style.display = "none";
     if (parrafos) {
-        parrafos.style.display = "block"; // O el valor original del display (block, inline, etc.)
+        parrafos.style.display = "block"; 
     }
 
 });
@@ -26,31 +27,45 @@ btnCopiar.addEventListener('click', function() {
 //La letra "o" es convertida para "ober"
 //La letra "u" es convertida para "ufat"
 
-function btnEncriptar(){
-    const textoEncriptado = encriptar(PrecentacionInput.value)
-    MensajeEncriptado.value = textoEncriptado
-    PrecentacionInput.value ="";
-    parrafos.style.display = "none";
-    mensaje2.style.display = "none"
+function btnEncriptar() {
 
-    const mensaje = document.getElementById("mensaje");
-    if (mensaje) {
-        mensaje.style.display = "block"; // Muestra el mensaje
+    if (textarea.value.trim() !== "") {
+        const textoEncriptado = encriptar(textarea.value);
+        MensajeEncriptado.value = textoEncriptado;
+        textarea.value = "";
+
+        parrafos.style.display = "none";
+        mensaje2.style.display = "none";
+
+        const mensaje = document.getElementById("mensaje");
+        if (mensaje) {
+            mensaje.style.display = "block"; 
+        }
+    } else {
+        
+        alert("Por favor, escribe algo en el campo de texto antes de encriptar.");
     }
 }
 
-function btnDesencriptar(){
-    const textoEncriptado = desencriptar(PrecentacionInput.value)
-    MensajeEncriptado.value = textoEncriptado
-    PrecentacionInput.value ="";
-    parrafos.style.display = "none";
-    mensaje.style.display = "none"
-    const mensaje2 = document.getElementById("mensaje2");
-    if (mensaje2) {
-        mensaje2.style.display = "block"; // Muestra el mensaje
-    }
 
+function btnDesencriptar() {
+    if (textarea.value.trim() !== "") {
+        const textoDesencriptado = desencriptar(textarea.value); 
+        MensajeEncriptado.value = textoDesencriptado;
+        textarea.value = "";
+
+        parrafos.style.display = "none";
+        mensaje.style.display = "none";
+
+        const mensaje2 = document.getElementById("mensaje2");
+        if (mensaje2) {
+            mensaje2.style.display = "block"; 
+        }
+    } else {
+        alert("Por favor, escribe algo en el campo de texto antes de desencriptar.");
+    }
 }
+
 
 function encriptar(stringEncriptada){
     let matrizCodigo = [["e","enter"],["i","imes"],["a","ai"],["o","ober"],["u","ufat"]];
@@ -61,8 +76,6 @@ function encriptar(stringEncriptada){
         if(stringEncriptada.includes(matrizCodigo[i][0])){
 
             stringEncriptada = stringEncriptada.replaceAll(matrizCodigo[i][0],matrizCodigo[i][1])
-
-
 
         }
 

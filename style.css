@@ -20,7 +20,7 @@
     --color-secundario: #B06161;
     --color-terseario: #D8DFE8;
     --color-texto-negro: #B06161;
-    --color-white: #F0DBAF;
+    --color-cuaternario: #F0DBAF;
 }
 
 
@@ -139,7 +139,7 @@ main {
     width: 30%;
     height: 600px;
     border-radius: 15px;
-    background-color: var(--color-white);
+    background-color: var(--color-cuaternario);
     position: relative;
     display: flex;
     flex-direction: column; 
@@ -219,12 +219,14 @@ main {
 
 
 footer{
+    position: relative;
     text-align: center;
     font-size: 20px;
     font-weight: 800;
     color: var(--color-secundario);
-    margin: 0px 0px 20px 0px;
-
+    background-color: var(--color-cuaternario);
+    padding: 20px;
+    margin-top:55px ;
 }
 
 /*----------MEDIA----------*/
